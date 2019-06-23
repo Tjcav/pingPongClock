@@ -1,0 +1,8 @@
+{
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328",
+    "port": "COM3",
+    "output": "../build",
+    "sketch": "src\\pingPongClock.ino",
+    "programmer": "Arduino as ISP"
+}
