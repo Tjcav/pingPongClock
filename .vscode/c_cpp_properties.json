@@ -8,7 +8,11 @@
                 "C:\\\\arduino\\\\arduino-1.8.9\\\\tools\\\\**",
                 "C:\\\\arduino\\\\arduino-1.8.9\\\\hardware\\\\arduino\\\\avr\\\\**",
                 "C:\\\\arduino\\\\arduino-1.8.9\\\\hardware\\\\tools\\\\avr\\\\avr\\\\include",
-                "C:\\\\arduino\\\\arduino-1.8.9\\\\hardware\\\\tools\\\\avr\\\\lib\\\\gcc\\\\avr\\\\5.4.0\\\\include"
+                "C:\\\\arduino\\\\arduino-1.8.9\\\\hardware\\\\tools\\\\avr\\\\lib\\\\gcc\\\\avr\\\\5.4.0\\\\include",
+
+                "${workspaceRoot}\\\\lib\\\\FastLED",
+                "${workspaceRoot}\\\\lib\\\\Time",
+                "${workspaceRoot}\\\\lib\\\\DS3232RTC\\\\src"
             ],
             "forcedInclude": [
                 "C:\\arduino\\arduino-1.8.9\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"
