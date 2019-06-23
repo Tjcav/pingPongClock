@@ -43,7 +43,7 @@ void displaynumber( int place , int number){
 }
 
 void loop(){
-  RTC.read(tm);
+  myRTC.read(tm);
   
   //changes the colour of background every 10 cycles
   if (counter<10){
