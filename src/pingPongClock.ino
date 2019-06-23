@@ -1,5 +1,5 @@
-#include <FastLED.h> <fastled.h><br>
-#include <DS3232RTC.h> <ds3232rtc.h>
+#include <FastLED.h>
+#include <DS3232RTC.h>
 #define LED_PIN     9
 #define NUM_LEDS    128
 DS3232RTC myRTC(false);
@@ -26,8 +26,11 @@ void setup()
     pinMode(16, OUTPUT);
     digitalWrite(17, HIGH);
     digitalWrite(16, LOW);
-    FastLED.addLeds<</ds3232rtc.h></fastled.h>WS2812, LED_PIN, GRB>(leds, NUM_LEDS);</p><p><fastled.h><ds3232rtc.h><ws2812, led_pin,="" grb="">    myRTC.begin();
-}</ws2812,></ds3232rtc.h></fastled.h></p><p>//function that uses the Digit aray to display numbers between 0 and 100
+    FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
+    myRTC.begin();
+}
+
+//function that uses the Digit aray to display numbers between 0 and 100
 void displaynumber( int place , int number){
   for (int i = 0 ; i < 10 ; i++) {
     if (Digits[number/10][i] != 0) {
@@ -37,7 +40,9 @@ void displaynumber( int place , int number){
       leds[(Digits[number%10][i]+28+place)] = CRGB(255,255,255);;
     }
   }
-}</p><p>void loop(){
+}
+
+void loop(){
   RTC.read(tm);
   
   //changes the colour of background every 10 cycles
@@ -46,7 +51,9 @@ void displaynumber( int place , int number){
   }else{
     colour.hue = (colour.hue+1)%256;
     counter=0;
-  }</p><p>  // sets background to rainbow colours
+  }
+
+  // sets background to rainbow colours
   for ( int i=0; i< 128;i++){
     colour.hue = (colour.hue+1)%256;
     leds[i]= colour;
@@ -54,7 +61,9 @@ void displaynumber( int place , int number){
   colour.hue = (colour.hue+128)%256;
   
   displaynumber(0,tm.Hour);
-  displaynumber(70,tm.Minute);</p><p>  //display colons
+  displaynumber(70,tm.Minute);
+
+  //display colons
   if ( tm.Second%2 == 0 ){
     leds[64] = CRGB(255,255,255);
     leds[66] = CRGB(255,255,255);
