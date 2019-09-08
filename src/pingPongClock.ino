@@ -22,12 +22,11 @@ const int Digits[10][10] =
 };
 void setup()
 {
-    pinMode(17, OUTPUT); //ground and v5 for clock module
-    pinMode(16, OUTPUT);
-    digitalWrite(17, HIGH);
-    digitalWrite(16, LOW);
-    FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
-    myRTC.begin();
+  //this is for testing/debugging
+  //testLEDbehindBalls();
+
+  FastLED.addLeds<WS2812, LED_PIN, GRB>(leds, NUM_LEDS);
+  myRTC.begin();
 }
 
 //function that uses the Digit aray to display numbers between 0 and 100
@@ -69,4 +68,18 @@ void loop(){
     leds[66] = CRGB(255,255,255);
   }
   FastLED.show();
+}
+
+void testLEDbehindBalls() { 
+  FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, NUM_LEDS);
+  unsigned int counter=0;
+  while(true) {
+     counter++;
+     leds[counter%128]=CHSV(counter%255,255,255);
+     leds[(counter+64)%128]=CHSV(counter%255,255,255);
+     FastLED.show(); 
+     leds[counter%128]=CHSV(0,0,0);
+     leds[(counter+64)%128]=CHSV(0,0,0);
+     delay(200); 
+  }
 }
